@@ -73,7 +73,7 @@ public class Controller09 {
 	
 	@RequestMapping("link4")
 	public void meethod4(Dto04 dto04) {
-		// 기본 자료형 String wrapper 형이 아니면 @ModelAttribute로 간주, 맞다면 @RequestParam
+		// method argument에 기본 자료형 String wrapper 형이 아니면 @ModelAttribute로 간주, 맞다면 @RequestParam
 		// 1. request param 수집 / 가공
 		// Dto04 객체 만듦
 		// name 요청 파라미터를 위 객체에 셋팅
@@ -88,12 +88,13 @@ public class Controller09 {
 	
 	// 경로 : /sub9/link5?model=sonata&company=hyundai&price=3000
 	@RequestMapping("link5")
-	public void method5(Dto02 dto) {
-		
+	public void method5(Dto02 dto) {		
+		// method argument에 기본 자료형 String wrapper 형이 아니면 @ModelAttribute로 간주, 맞다면 @RequestParam
 		// 1. request param 수집 / 가공
-		// Dto04 객체 만듦
-		// name 요청 파라미터를 위 객체에 셋팅 -> @ModelAttribute가 하는 역할
-		// age 요청 파라미터 위 객체에 셋팅 -> @ModelAttribute가 하는 역할
+		// Dto02 객체 만듦
+		// model 요청 파라미터를 위 객체에 셋팅 -> @ModelAttribute가 하는 역할
+		// company 요청 파라미터 위 객체에 셋팅 -> @ModelAttribute가 하는 역할
+		// price 요청 파라미터 위 객체에 셋팅 -> @ModelAttribute가 하는 역할
 						
 		// 3. add attribute 추가
 		// 위 객체를 dto02 이름으로 model 추가
