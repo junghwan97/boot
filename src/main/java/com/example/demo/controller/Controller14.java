@@ -24,19 +24,19 @@ public class Controller14 {
 	
 	// /sub14/link1?keyword=or
 	@RequestMapping("link1")
-	public String method1(String keyword, Model model) throws Exception {
+	public String method1(String keyword, String kk, Model model) throws Exception {
 		String sql = """
 				SELECT CustomerID, CustomerName, Address, ContactName
 				FROM Customers
 				WHERE CustomerName LIKE ?
-				OR ContactName LIKE ?
+				AND ContactName LIKE ?
 				""";
 		var list = new ArrayList<Customer>();
 		
 		Connection con = DriverManager.getConnection(url, name, password);
 		PreparedStatement pstmt = con.prepareStatement(sql);
 		pstmt.setString(1, "%" + keyword + "%");
-		pstmt.setString(2, "%" + keyword + "%");
+		pstmt.setString(2, "%" + kk + "%");
 		ResultSet rs = pstmt.executeQuery();
 		
 		try (con; pstmt; rs;) {
