@@ -42,10 +42,14 @@ public class Controller14 {
 		try (con; pstmt; rs;) {
 			while (rs.next()) {
 				Customer c = new Customer();
-				c.setId(rs.getInt("customerId"));
-				c.setAddress(rs.getString("address"));
-				c.setName(rs.getString("customerName"));
-				c.setContactName(rs.getString("contactname"));
+//				c.setId(rs.getInt("customerId"));
+				c.setId(rs.getInt(1));
+//				c.setAddress(rs.getString("address"));
+				c.setAddress(rs.getString(4));
+//				c.setName(rs.getString("customerName"));
+				c.setName(rs.getString(2));
+//				c.setContactName(rs.getString("contactname"));
+				c.setContactName(rs.getString(3));
 				list.add(c);
 			}
 		}
