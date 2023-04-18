@@ -139,9 +139,9 @@ public class Controller17 {
 
 		// 왜 try문이 2번 사용되었을까?
 		// 두 번째 try-with-resources 문이 첫 번째 try-with-resources 문 안에 중첩되어 있는 이유는 ResultSet
-		// 객체가 생성된 후에는 PreparedStatement 객체와 Connection 객체가 여전히 사용 중인 상태이기 때문입니다. 또한
-		// ResultSet 객체도 자원을 사용하는 객체이므로 try-with-resources 문을 사용하여 안전하게 자원을 해제해야 합니다.
-		// 따라서 두 번째 try-with-resources 문에서 ResultSet 객체를 생성하여 안전하게 자원을 해제할 수 있도록 합니다.
+		// 객체가 생성된 후에는 PreparedStatement 객체와 Connection 객체가 여전히 사용 중인 상태이기 때문이다. 또한
+		// ResultSet 객체도 자원을 사용하는 객체이므로 try-with-resources 문을 사용하여 안전하게 자원을 해제해야 한다.
+		// 따라서 두 번째 try-with-resources 문에서 ResultSet 객체를 생성하여 안전하게 자원을 해제할 수 있도록 한다.
 	}
 
 	@RequestMapping("link5")
