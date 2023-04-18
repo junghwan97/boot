@@ -1,11 +1,16 @@
 package com.example.demo.controller;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+
 import org.springframework.stereotype.*;
 import org.springframework.ui.*;
 import org.springframework.web.bind.annotation.*;
 
 import com.study.demo.domain.Dto02;
 import com.study.demo.domain.Dto04;
+import com.study.demo.domain.Supplier;
 
 import jakarta.servlet.http.*;
 
@@ -102,4 +107,20 @@ public class Controller09 {
 		// 4. forward / redirect
 		// WEB-INF/views/sub9/link5.jsp로 포워드		
 	}
+	
+	
+	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
