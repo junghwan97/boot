@@ -145,8 +145,8 @@ public class Controller17 {
 	}
 
 	@RequestMapping("link5")
-//	public void method5(int id, Customer customer) throws Exception{
-	public void method5(int id, Model model) throws Exception {
+	public void method5(int id, Customer customer) throws Exception{
+//	public void method5(int id, Model model) throws Exception {
 
 		String sql = """
 				SELECT
@@ -166,7 +166,7 @@ public class Controller17 {
 			pstmt.setInt(1, id);
 			try (ResultSet rs = pstmt.executeQuery();) {
 				if (rs.next()) {
-					Customer customer = new Customer();
+//					Customer customer = new Customer();
 					customer.setId(rs.getInt(1));
 					customer.setName(rs.getString(2));
 					customer.setContactName(rs.getString(3));
@@ -174,7 +174,7 @@ public class Controller17 {
 					customer.setCity(rs.getString(5));
 					customer.setPostalCode(rs.getString(6));
 					customer.setCountry(rs.getString(7));
-					model.addAttribute("customer", customer);
+//					model.addAttribute("customer", customer);
 				}
 			}
 		}
