@@ -17,7 +17,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 @RequestMapping("sub25")
 public class Controller25 {
 	
-	@RequestMapping(path = "link1", method = RequestMethod.POST)
+	@RequestMapping(path = "link1", method = RequestMethod.GET)
 	public void method1() {
 		// Get방식이 지원되지 않는다는 오류
 		System.out.println("/sub25/link1에서 일하는 메서드");
@@ -70,11 +70,12 @@ public class Controller25 {
 		return "redirect:/sub25/link7";
 	}
 	
+	// 경로 : /sub25/link9?value1
 	@GetMapping("link9")
 	public String method9(Model model) {
 		
 		model.addAttribute("attr1", "value1");
-		// model 속 데이터를 viwe로 건네줄 때 request 사용
+		// model 속 데이터를 view로 건네줄 때 request 사용
 		return "redirect:link10";
 	}
 	
